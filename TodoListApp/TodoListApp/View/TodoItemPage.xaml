@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TodoListApp.View.TodoItemPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10,20,10,10">
+             <Picker x:Name="picker" Title="Prioridade">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Baixa</x:String>
+                        <x:String>Média</x:String>
+                        <x:String>Alta</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Label Text="Descrição" />
+            <Entry Text="{Binding Description}" Keyboard="Numeric"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="Salvar" Clicked="OnSaveClicked" FontSize="10" WidthRequest="70"/>
+                <Button Text="Cancelar" Clicked="OnCancelClicked" FontSize="10" WidthRequest="70"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
