@@ -13,7 +13,7 @@ namespace TodoListApp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new TodoListApp.View.TodoListPage());
         }
 
         internal static TodoItemDatabase DataBase

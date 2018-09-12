@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TodoListApp.View.TodoListPage">
+    <StackLayout Orientation="Vertical">
+        <ListView x:Name="todoListView"
+            ItemsSource="{Binding Items}"
+            ItemTapped="setItemAsDone"
+            CachingStrategy="RecycleElement">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label Text="{Binding Priority}" VerticalTextAlignment="Center" FontSize="20" HorizontalOptions="StartAndExpand" />
+                            <Label Text="{Binding Description}" VerticalTextAlignment="Center" FontSize="20" HorizontalOptions="EndAndExpand" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
+        <Button Text="+" Clicked="addNewTodoItem"/>
+    </StackLayout>
+    
+</ContentPage>
