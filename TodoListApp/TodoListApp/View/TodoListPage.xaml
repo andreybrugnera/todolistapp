@@ -5,6 +5,7 @@
     
     <StackLayout Orientation="Vertical">
         <ListView x:Name="todoListView"
+            BackgroundColor="LightYellow"
             ItemsSource="{Binding Items}"
             ItemTapped="setItemAsDoneOrUndone"
             CachingStrategy="RecycleElement">
@@ -14,6 +15,7 @@
                     <ViewCell>
                         <StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                             <Label Text="{Binding Priority}" VerticalTextAlignment="Center" FontSize="20" HorizontalOptions="StartAndExpand" />
+                            <Label Text="Done" IsVisible="{Binding Done}" VerticalTextAlignment="Center" FontSize="20" HorizontalOptions="EndAndExpand" />
                             <Label Text="{Binding Description}" VerticalTextAlignment="Center" FontSize="20" HorizontalOptions="EndAndExpand" />
                         </StackLayout>
                     </ViewCell>

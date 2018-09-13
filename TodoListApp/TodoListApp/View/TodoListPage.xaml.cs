@@ -20,6 +20,11 @@ namespace TodoListApp.View
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+            loadTotoItems();
+        }
+
+        private async void loadTotoItems()
+        {
             Items = new ObservableCollection<TodoItem>(await App.DataBase.GetAll()); ;
             todoListView.ItemsSource = Items;
         }
@@ -42,8 +47,7 @@ namespace TodoListApp.View
 
             await App.DataBase.SaveOrUpdateTodoItem(todoItem);
 
-            //Deselect Item
-            ((ListView)sender).SelectedItem = null;
+            loadTotoItems();
         }
     }
 }

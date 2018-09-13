@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TodoListApp.View.TodoItemPage">
     <ContentPage.Content>
-        <StackLayout Padding="10,20,10,10">
+        <StackLayout Padding="10,20,10,10" BackgroundColor="LightYellow">
              <Picker x:Name="picker" Title="Prioridade">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
