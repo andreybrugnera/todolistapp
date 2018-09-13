@@ -9,7 +9,8 @@ namespace TodoListApp.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TodoListPage : ContentPage
     {
-        public ObservableCollection<string> Items { get; set; }
+
+        ObservableCollection<TodoItem> Items;
 
         public TodoListPage()
         {
@@ -19,7 +20,8 @@ namespace TodoListApp.View
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            todoListView.ItemsSource = await App.DataBase.GetAll();
+            Items = new ObservableCollection<TodoItem>(await App.DataBase.GetAll()); ;
+            todoListView.ItemsSource = Items;
         }
 
         async void addNewTodoItem(object sender, EventArgs e)
@@ -30,12 +32,15 @@ namespace TodoListApp.View
             });
         }
 
-        async void setItemAsDone(object sender, ItemTappedEventArgs e)
+        async void setItemAsDoneOrUndone(object sender, ItemTappedEventArgs e)
         {
             if (e.Item == null)
                 return;
 
-            await DisplayAlert("Item Tapped", "Setting item as done.", "OK");
+            TodoItem todoItem = (TodoItem) e.Item;
+            todoItem.Done = todoItem.Done ? false : true;
+
+            await App.DataBase.SaveOrUpdateTodoItem(todoItem);
 
             //Deselect Item
             ((ListView)sender).SelectedItem = null;

@@ -2,10 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TodoListApp.View.TodoListPage">
+    
     <StackLayout Orientation="Vertical">
         <ListView x:Name="todoListView"
             ItemsSource="{Binding Items}"
-            ItemTapped="setItemAsDone"
+            ItemTapped="setItemAsDoneOrUndone"
             CachingStrategy="RecycleElement">
 
             <ListView.ItemTemplate>
@@ -20,7 +21,7 @@
             </ListView.ItemTemplate>
             
         </ListView>
-        <Button Text="+" Clicked="addNewTodoItem"/>
+        <Button Text="Adicionar" Clicked="addNewTodoItem"/>
     </StackLayout>
     
 </ContentPage>
