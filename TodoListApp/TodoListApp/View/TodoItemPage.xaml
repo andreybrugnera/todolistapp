@@ -14,10 +14,10 @@
                 </Picker.ItemsSource>
             </Picker>
             <Label Text="Descrição" />
-            <Entry Text="{Binding Description}" Keyboard="Numeric"/>
+            <Entry Text="{Binding Description}"/>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <Button Text="Salvar" Clicked="OnSaveClicked" FontSize="10" WidthRequest="70"/>
-                <Button Text="Cancelar" Clicked="OnCancelClicked" FontSize="10" WidthRequest="70"/>
+                <Button Text="Salvar" Clicked="OnSaveClicked" FontSize="10" WidthRequest="100"/>
+                <Button Text="Cancelar" Clicked="OnCancelClicked" FontSize="10" WidthRequest="100"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

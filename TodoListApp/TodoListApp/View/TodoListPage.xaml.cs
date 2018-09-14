@@ -25,7 +25,7 @@ namespace TodoListApp.View
 
         private async void loadTotoItems()
         {
-            Items = new ObservableCollection<TodoItem>(await App.DataBase.GetAll()); ;
+            Items = new ObservableCollection<TodoItem>(await App.DataBase.GetAll());
             todoListView.ItemsSource = Items;
         }
 
@@ -44,7 +44,7 @@ namespace TodoListApp.View
 
             TodoItem todoItem = (TodoItem) e.Item;
             todoItem.Done = todoItem.Done ? false : true;
-
+ 
             await App.DataBase.SaveOrUpdateTodoItem(todoItem);
 
             loadTotoItems();
