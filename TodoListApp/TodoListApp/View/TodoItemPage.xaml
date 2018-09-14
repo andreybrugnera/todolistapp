@@ -4,7 +4,8 @@
              x:Class="TodoListApp.View.TodoItemPage">
     <ContentPage.Content>
         <StackLayout Padding="10,20,10,10" BackgroundColor="LightYellow">
-             <Picker x:Name="picker" Title="Prioridade">
+            <Label Text="Prioridade" />
+             <Picker x:Name="picker">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Baixa</x:String>
