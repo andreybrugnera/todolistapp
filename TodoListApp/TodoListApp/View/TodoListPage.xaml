@@ -4,18 +4,53 @@
              x:Class="TodoListApp.View.TodoListPage">
     
     <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Horizontal" Padding="10" BackgroundColor="LightYellow">
+            <Label Text="Prioridade" VerticalOptions="Center"/>
+            <Picker
+                x:Name="priorityPicker"
+                SelectedItem="{Binding SelectedPriorityFilter}"
+                VerticalOptions="Center" 
+                HorizontalOptions="FillAndExpand"
+            >
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Todas</x:String>
+                        <x:String>Baixa</x:String>
+                        <x:String>Média</x:String>
+                        <x:String>Alta</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="10" BackgroundColor="LightYellow">
+            <Label Text="Status" VerticalOptions="Center"/>
+            <Picker
+                x:Name="statusPicker"
+                SelectedItem="{Binding SelectedStatusFilter}"
+                VerticalOptions="Center" 
+                HorizontalOptions="FillAndExpand"
+            >
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Todas</x:String>
+                        <x:String>Resolvidas</x:String>
+                        <x:String>Pendentes</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </StackLayout>
+        <SearchBar SearchButtonPressed="SearchBar_SearchButtonPressed" x:Name="MainSearchBar" />
         <ListView x:Name="todoListView"
             BackgroundColor="LightYellow"
             ItemsSource="{Binding Items}"
             ItemTapped="setItemAsDoneOrUndone"
             CachingStrategy="RecycleElement">
-
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                             <Label Text="{Binding Priority}" VerticalTextAlignment="Center" FontSize="20" HorizontalOptions="StartAndExpand" />
-                            <Label Text="Done" IsVisible="{Binding Done}" VerticalTextAlignment="Center" FontSize="20" HorizontalOptions="EndAndExpand" />
+                            <Label Text="Resolvida" IsVisible="{Binding Done}" VerticalTextAlignment="Center" FontSize="20" HorizontalOptions="EndAndExpand" />
                             <Label Text="{Binding Description}" VerticalTextAlignment="Center" FontSize="20" HorizontalOptions="EndAndExpand" />
                         </StackLayout>
                     </ViewCell>
