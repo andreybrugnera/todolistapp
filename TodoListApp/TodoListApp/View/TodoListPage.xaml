@@ -4,7 +4,7 @@
              x:Class="TodoListApp.View.TodoListPage">
     
     <StackLayout Orientation="Vertical">
-        <StackLayout Orientation="Horizontal" Padding="10" BackgroundColor="LightYellow">
+        <StackLayout Orientation="Horizontal" Padding="10">
             <Label Text="Prioridade" VerticalOptions="Center"/>
             <Picker
                 x:Name="priorityPicker"
@@ -22,7 +22,7 @@
                 </Picker.ItemsSource>
             </Picker>
         </StackLayout>
-        <StackLayout Orientation="Horizontal" Padding="10" BackgroundColor="LightYellow">
+        <StackLayout Orientation="Horizontal" Padding="10">
             <Label Text="Status" VerticalOptions="Center"/>
             <Picker
                 x:Name="statusPicker"
@@ -41,7 +41,6 @@
         </StackLayout>
         <SearchBar SearchButtonPressed="SearchBar_SearchButtonPressed" x:Name="MainSearchBar" />
         <ListView x:Name="todoListView"
-            BackgroundColor="LightYellow"
             ItemsSource="{Binding Items}"
             ItemTapped="setItemAsDoneOrUndone"
             CachingStrategy="RecycleElement">
