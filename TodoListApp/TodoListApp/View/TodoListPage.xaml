@@ -65,7 +65,7 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
                                 <BoxView WidthRequest="5" BackgroundColor="{Binding Priority, Converter={StaticResource BarConverter}}" Grid.Row="0" Grid.Column="0"/>
-                                <StackLayout Padding="10" Orientation="Horizontal" x:Name="_gridContent" Grid.Column="1" Grid.Row="0" Padding="8">
+                                <StackLayout Orientation="Horizontal" x:Name="_gridContent" Grid.Column="1" Grid.Row="0">
                                     <Label Text="{Binding Description}" VerticalTextAlignment="Center" FontSize="20" HorizontalOptions="StartAndExpand" />
                                     <Image x:Name="doneImage" Source="checkmark.png" IsVisible="{Binding Done}" HorizontalOptions="EndAndExpand" WidthRequest="20" />
                                 </StackLayout>
