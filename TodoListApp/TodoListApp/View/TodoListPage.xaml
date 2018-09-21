@@ -75,6 +75,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Text="Adicionar" Clicked="addNewTodoItem" BorderRadius="2" BackgroundColor="Green" TextColor="White" HeightRequest="80"/>
+        <Button Text="Adicionar" Clicked="addNewTodoItem" BorderRadius="2" BackgroundColor="Green" TextColor="White"/>
     </StackLayout>
 </ContentPage>
