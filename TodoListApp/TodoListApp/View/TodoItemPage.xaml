@@ -6,7 +6,7 @@
     <ContentPage.Content>
         <StackLayout Padding="10,20,10,10">
             <Label Text="Prioridade" TextColor="White"/>
-             <Picker x:Name="picker">
+            <Picker x:Name="picker" TextColor="White">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Baixa</x:String>
