@@ -16,9 +16,9 @@
                 </Picker.ItemsSource>
             </Picker>
             <Label Text="Descrição" TextColor="White"/>
-            <Entry Text="{Binding Description}"/>
-            <Button Text="Salvar" Clicked="OnSaveClicked" FontSize="10" BorderRadius="2" BackgroundColor="Green" TextColor="White" HeightRequest="30"/>
-            <Button Margin="0,10,0,0" Text="Cancelar" Clicked="OnCancelClicked" FontSize="10" BorderRadius="2" BackgroundColor="Red" TextColor="White" HeightRequest="30"/>
+            <Entry Text="{Binding Description}" TextColor="White"/>
+            <Button Text="SALVAR" Clicked="OnSaveClicked" FontSize="10" BorderRadius="2" BackgroundColor="Green" TextColor="White"/>
+            <Button Margin="0,10,0,0" Text="CANCELAR" Clicked="OnCancelClicked" FontSize="10" BorderRadius="2" BackgroundColor="Red" TextColor="White"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
