@@ -45,7 +45,7 @@
         </StackLayout>
         <StackLayout Orientation="Vertical">
             <Label Text="Busque por descrição" VerticalOptions="Center" TextColor="White"/>
-            <SearchBar TextColor="White" SearchButtonPressed="SearchBar_SearchButtonPressed" x:Name="MainSearchBar" Placeholder="Busque por descrição..."/>
+            <SearchBar SearchButtonPressed="SearchBar_SearchButtonPressed" x:Name="MainSearchBar" Placeholder="Busque por descrição..."/>
         </StackLayout>
         <ListView x:Name="todoListView"
             ItemsSource="{Binding Items}"
