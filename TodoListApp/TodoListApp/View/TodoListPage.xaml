@@ -4,8 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="TodoListApp.View.TodoListPage"
 >
-    <StackLayout Orientation="Vertical">
-        <StackLayout Orientation="Horizontal" Padding="10">
+    <StackLayout Orientation="Vertical" Padding="20">
+        <StackLayout Orientation="Vertical">
             <Label Text="Prioridade" VerticalOptions="Center"/>
             <Picker
                 x:Name="priorityPicker"
@@ -23,7 +23,7 @@
                 </Picker.ItemsSource>
             </Picker>
         </StackLayout>
-        <StackLayout Orientation="Horizontal" Padding="10">
+        <StackLayout Orientation="Vertical">
             <Label Text="Status" VerticalOptions="Center"/>
             <Picker
                 x:Name="statusPicker"
@@ -40,7 +40,10 @@
                 </Picker.ItemsSource>
             </Picker>
         </StackLayout>
-        <SearchBar SearchButtonPressed="SearchBar_SearchButtonPressed" x:Name="MainSearchBar" />
+        <StackLayout Orientation="Vertical">
+            <Label Text="Busque por descrição" VerticalOptions="Center"/>
+            <SearchBar SearchButtonPressed="SearchBar_SearchButtonPressed" x:Name="MainSearchBar" Placeholder="Busque por descrição..."/>
+        </StackLayout>
         <ListView x:Name="todoListView"
             ItemsSource="{Binding Items}"
             ItemTapped="setItemAsDoneOrUndone"
@@ -49,15 +52,26 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                            <Label Text="{Binding Priority}" VerticalTextAlignment="Center" FontSize="20" HorizontalOptions="StartAndExpand" />
-                            <Label Text="Resolvida" IsVisible="{Binding Done}" VerticalTextAlignment="Center" FontSize="20" HorizontalOptions="EndAndExpand" />
-                            <Label Text="{Binding Description}" VerticalTextAlignment="Center" FontSize="20" HorizontalOptions="EndAndExpand" />
+                        <StackLayout Margin="0,10,0,10">
+                            <Grid BackgroundColor="WhiteSmoke">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="8" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <BoxView WidthRequest="5" BackgroundColor="{Binding Priority, Converter={StaticResource BarConverter}}" Grid.Row="0" Grid.Column="0"/>
+                                <StackLayout x:Name="_gridContent" Grid.Column="1" Grid.Row="0" Padding="18">
+                                    <Label Text="{Binding Description}" VerticalTextAlignment="Center" FontSize="20" HorizontalOptions="StartAndExpand" />
+                                    <Image x:Name="doneImage" Source="checkmark.png" IsVisible="{Binding Done}" HorizontalOptions="EndAndExpand" WidthRequest="20" />
+                                </StackLayout>
+                            </Grid>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Text="Adicionar" Clicked="addNewTodoItem"/>
+        <Button Text="Adicionar" Clicked="addNewTodoItem" BorderRadius="2" BackgroundColor="Green" TextColor="White"/>
     </StackLayout>
 </ContentPage>

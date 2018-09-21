@@ -4,8 +4,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="TodoListApp.App"
     xmlns:light="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Light"
->
+    xmlns:converters="clr-namespace:TodoListApp.Converters">
     <Application.Resources>
         <ResourceDictionary MergedWith="light:LightThemeResources" />
+        <converters:BarConverter x:Key="BarConverter" />
     </Application.Resources>
 </Application>
