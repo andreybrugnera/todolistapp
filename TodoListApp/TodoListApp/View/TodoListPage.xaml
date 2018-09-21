@@ -3,10 +3,11 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="TodoListApp.View.TodoListPage"
+    BackgroundImage="background2.jpg"
 >
     <StackLayout Orientation="Vertical" Padding="20">
         <StackLayout Orientation="Vertical">
-            <Label Text="Prioridade" VerticalOptions="Center"/>
+            <Label Text="Prioridade" VerticalOptions="Center" TextColor="White"/>
             <Picker
                 x:Name="priorityPicker"
                 SelectedItem="{Binding SelectedPriorityFilter}"
@@ -24,7 +25,7 @@
             </Picker>
         </StackLayout>
         <StackLayout Orientation="Vertical">
-            <Label Text="Status" VerticalOptions="Center"/>
+            <Label Text="Status" VerticalOptions="Center" TextColor="White"/>
             <Picker
                 x:Name="statusPicker"
                 SelectedItem="{Binding SelectedStatusFilter}"
@@ -41,7 +42,7 @@
             </Picker>
         </StackLayout>
         <StackLayout Orientation="Vertical">
-            <Label Text="Busque por descrição" VerticalOptions="Center"/>
+            <Label Text="Busque por descrição" VerticalOptions="Center" TextColor="White"/>
             <SearchBar SearchButtonPressed="SearchBar_SearchButtonPressed" x:Name="MainSearchBar" Placeholder="Busque por descrição..."/>
         </StackLayout>
         <ListView x:Name="todoListView"
