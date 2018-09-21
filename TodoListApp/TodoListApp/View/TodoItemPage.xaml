@@ -16,9 +16,9 @@
             </Picker>
             <Label Text="Descrição" />
             <Entry Text="{Binding Description}"/>
-            <StackLayout Orientation="Vertical" HorizontalOptions="Center">
-                <Button Text="Salvar" Clicked="OnSaveClicked" FontSize="10" BorderRadius="2" BackgroundColor="Green" TextColor="White"/>
-                <Button Margin="0,10,0,0" Text="Cancelar" Clicked="OnCancelClicked" FontSize="10" BorderRadius="2" BackgroundColor="Red" TextColor="White"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="Salvar" Clicked="OnSaveClicked" FontSize="10" BorderRadius="2" BackgroundColor="Green" TextColor="White" WidthRequest="80"/>
+                <Button Text="Cancelar" Clicked="OnCancelClicked" FontSize="10" BorderRadius="2" BackgroundColor="Red" TextColor="White" WidthRequest="80"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
